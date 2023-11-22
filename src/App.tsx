@@ -22,7 +22,7 @@ export function App() {
     completion,
     isLoading
   } = useCompletion({
-    api: 'http://whisper-ai-backend.us-west-2.elasticbeanstalk.com/ai/complete',
+    api: 'http://localhost:3333/ai/complete',
     body: {
       videoId,
       temperature,
@@ -35,11 +35,12 @@ export function App() {
   return (
     <div className='min-h-screen flex flex-col'>
       <div className="px-6 py-3 flex items-center justify-between border-b">
-        <a href="https://www.leveduca.com.br/" target='_blank'>
-          <img src="src/logo4.svg" width="150" height="30" alt="Logo do Leveduca"></img>
-        </a>
+        <img className='w-32' src='src/IFSULDEMINAS_horizontal.png'></img>
         <div className="flex items-center gap-3">
-          <span className="text-sm text-muted-foreground">&copy; Desenvolvido por Nubbi</span>
+          <a href="https://github.com/igorflpaula" target='_blank'>
+            GitHub
+          </a>
+          <span className="text-sm text-muted-foreground">&copy; Desenvolvido por Igor de Paula</span>
         </div>
       </div>
 
@@ -59,7 +60,7 @@ export function App() {
               value={completion}
             />
           </div>
-          <p className='tetx-sm text-muted-foreground'>Lembre-se: você pode utilizar a variável <code className='text-red-600'>{'{transcription}'}</code> no seu prompt para adicionar o conteúdo da transcrição do vídeo selecionado</p>
+          <p className='tetx-sm text-muted-foreground'>Lembre-se: você pode utilizar a variável <code className='text-green-500'>{'{transcription}'}</code> no seu prompt para adicionar o conteúdo da transcrição do vídeo selecionado</p>
         </div>
         <aside className='w-80 space-y-6'>
 
@@ -86,7 +87,6 @@ export function App() {
                   <SelectItem value='1'>GPT 3.5</SelectItem>
                 </SelectContent>
               </Select>
-              <span className='block text-xs text-muted-foreground italic'>Você poderá customizar essa opção em breve</span>
             </div>
 
             <Separator />

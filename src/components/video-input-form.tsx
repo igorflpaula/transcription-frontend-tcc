@@ -154,7 +154,7 @@ export function VideoInputForm(props: VideoInputFormProps) {
                     disabled={status != 'waiting'}
                     id='transcription_prompt'
                     className='h-20 leading-relaxed resize-none text-xs'
-                    placeholder="Para legendas menores adicione 'max_line_length', seguindo da quantidade de caracteres. Ex.: max_line_length: 42"
+                    placeholder="Adicione palavras-chave mencionadas no vídeo separadas por vírgula (,)"
                 />
                 {/* Inclua palavras-chave mencionadas no vídeo separadas por vírgula */}
             </div>
@@ -172,16 +172,6 @@ export function VideoInputForm(props: VideoInputFormProps) {
                             <Upload className="w-4 h-4 ml-2" />
                         </>
                     ) : statusMessages[status]}
-                </Button>
-                <Button
-                    className='data-[success=true]:bg-emerald-400 text-xs w-full'
-                    disabled
-                    onClick={handleDownloadSrt}
-                >
-                    <>
-                        Download .srt
-                        <Download className="w-4 h-4 ml-2" />
-                    </>
                 </Button>
             </div>
 
